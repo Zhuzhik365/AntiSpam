@@ -1,10 +1,19 @@
 import pandas as pd
 import numpy as np
 import re
+import sys
+import os
+
+# Определяем путь к данным
+def resource_path(relative_path):
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
+
 
 # Загрузка датасета
-df = pd.read_csv('SMSSpamCollection', sep='\t', header=None, names=['label', 'message'])
-
+data_path = resource_path('SMSSpamCollection')
+df = pd.read_csv(data_path, sep='\t', header=None, names=['label', 'message'])
 
 # Функция предобработки текста
 def preprocess_text(text):

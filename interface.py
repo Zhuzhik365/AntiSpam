@@ -123,7 +123,8 @@ class App(CTk):
                     print(e)
 
         # Кнопка выбора файла
-        icon = CTkImage(Image.open("icn1.png"))
+        icon_path = alg.resource_path("icn1.png")
+        icon = CTkImage(Image.open(icon_path))
         btn_file = CTkButton(btn_frame, width=35, image=icon, text='', command=load_from_file)
         btn_file.grid(row=0, column=0, padx=5, pady=5)
 
