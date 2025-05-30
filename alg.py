@@ -21,8 +21,6 @@ df['clean_message'] = df['message'].apply(preprocess_text)
 spam_df = df[df['label'] == 'spam']
 ham_df = df[df['label'] == 'ham']
 
-spam_df.to_csv("spam.csv")
-
 
 # Создание словарей частот слов
 def create_freq_dict(messages):
