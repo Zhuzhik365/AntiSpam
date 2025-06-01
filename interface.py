@@ -1,9 +1,10 @@
+import os
 import tkinter as tk
 import datetime
 from CTkTable import *
 from PIL import Image, ImageTk
 from customtkinter import *
-
+import os
 from data import alg
 
 
@@ -11,15 +12,14 @@ class App(CTk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        try:
+        if str(os.name) == 'nt':
             self.iconbitmap("data/icn.ico")
-        except:
-            try:
-                icon_image = Image.open("data/icn.png")
-                self.tk_icon = ImageTk.PhotoImage(icon_image)
-                self.iconphoto(False, self.tk_icon)
-            except:
-                pass
+        else:
+            icon_image = Image.open("data/icn.png")
+            self.tk_icon = ImageTk.PhotoImage(icon_image)
+            self.iconphoto(False, self.tk_icon)
+
+
         bg_color = self._apply_appearance_mode(self.cget("background"))
         print(bg_color)
 
