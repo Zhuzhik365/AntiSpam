@@ -12,7 +12,7 @@ class App(CTk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        if str(os.name) == 'nt':
+        if os.name == 'nt':
             self.iconbitmap("data/icn.ico")
         else:
             icon_image = Image.open("data/icn.png")
