@@ -3,7 +3,7 @@ import numpy as np
 import re
 
 # Загрузка датасета
-data_path = 'data/SMSSpamCollection'
+data_path = 'AntiSpam_data/SMSSpamCollection'
 df = pd.read_csv(data_path, sep='\t', header=None, names=['label', 'message'])
 
 # Функция предобработки текста

@@ -5,7 +5,7 @@ from CTkTable import *
 from PIL import Image, ImageTk
 from customtkinter import *
 import os
-from data import alg
+from AntiSpam_data import alg
 
 
 class App(CTk):
@@ -13,9 +13,9 @@ class App(CTk):
         super().__init__(*args, **kwargs)
 
         if os.name == 'nt':
-            self.iconbitmap("data/icn.ico")
+            self.iconbitmap("AntiSpam_data/icn.ico")
         else:
-            icon_image = Image.open("data/icn.png")
+            icon_image = Image.open("AntiSpam_data/icn.png")
             self.tk_icon = ImageTk.PhotoImage(icon_image)
             self.iconphoto(False, self.tk_icon)
 
@@ -132,7 +132,7 @@ class App(CTk):
                     print(e)
 
         # Кнопка выбора файла
-        icon_path = "data/icn1.png"
+        icon_path = "AntiSpam_data/icn1.png"
         icon = CTkImage(Image.open(icon_path))
         btn_file = CTkButton(btn_frame, width=35, image=icon, text='', command=load_from_file)
         btn_file.grid(row=0, column=0, padx=5, pady=5)
