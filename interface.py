@@ -1,4 +1,3 @@
-import os
 import tkinter as tk
 import datetime
 from CTkTable import *
@@ -10,7 +9,6 @@ from AntiSpam_data import alg
 class App(CTk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
         if os.name == 'nt':
             self.iconbitmap("AntiSpam_data/icn.ico")
         else:
