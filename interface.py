@@ -4,7 +4,6 @@ import datetime
 from CTkTable import *
 from PIL import Image, ImageTk
 from customtkinter import *
-import os
 from AntiSpam_data import alg
 
 
